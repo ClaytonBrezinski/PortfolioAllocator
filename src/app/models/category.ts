@@ -1,11 +1,11 @@
 import {Company} from "./company";
 
 export class Category {
-  categoryName: string;
-  categoryWeight: number;
+  name: string;
+  categoryPercent: number;
 
-  constructor(categoryName: string, categoryWeight: number) {
-    this.categoryName = categoryName;
-    this.categoryWeight = categoryWeight;
+  constructor(name: string, categoryPercent: number) {
+    this.name = name;
+    this.categoryPercent = categoryPercent;
   }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Company} from "../../models/company";
+import {PortfolioService} from "../../services/portfolio.service";
 
 @Component({
   selector: 'app-homepage',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  portfolio: Company[] = [];
+
+  constructor(private portfolioServiceService: PortfolioService) { }
 
   ngOnInit() {
+    this.portfolio = this.portfolioServiceService.getPortfolio();
   }
 
 }

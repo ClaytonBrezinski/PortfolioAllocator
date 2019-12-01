@@ -1,10 +1,10 @@
 import {Category} from "./category";
 
 export class Company {
-  name: string;
-  tickerSymbol: string;
-  categoryPercent: number;
-  category: Category;
+  public name: string;
+  public tickerSymbol: string;
+  public categoryPercent: number;
+  public category: Category;
 
   constructor(name: string, tickerSymbol: string, categoryPercent: number, category: Category) {
     this.name = name;
@@ -12,4 +12,9 @@ export class Company {
     this.categoryPercent = categoryPercent;
     this.category = category;
   }
+
+  getPortfolioPercent(): number {
+    return (this.categoryPercent) * (this.category.categoryPercent) / 100;
+  }
+
 }
